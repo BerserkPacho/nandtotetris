@@ -1,0 +1,13 @@
+/**
+ * Demultiplexor:
+ * {a, b} = {in, 0} if sel == 0
+ *          {0, in} if sel == 1 a, b;
+Chip DMux{
+    IN a, b,sel; 
+    OUT out; 
+    PARTS:
+    Not(in=sel, out=seln);    
+    And(a=seln, b=in, out=a);
+    And(a=sel, b=in, out=b);
+}
+ 
